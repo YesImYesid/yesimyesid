@@ -1,0 +1,199 @@
+/* COLORES BLOG*/
+:root {
+    --primary: #00ccff;      /* Cyan fluorescente */
+    --secondary: #ff00ff;    /* Magenta */
+    --bg: #1a1a1a;          /* Fondo oscuro */
+    --text: #00ff00;         /* Verde matriz */
+    --accent: #ffff00;       /* Amarillo neón */
+}
+
+/* RESET Y FUENTE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 255, 0, 0.03) 0px,
+            rgba(0, 255, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 2px
+        );
+    /* Efecto de líneas tipo CRT (monitor viejo) */
+}
+
+/* HEADER CON BORDE PIXELADO */
+header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border: 3px solid var(--accent);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 
+        5px 5px 0px rgba(0, 255, 0, 0.5),
+        10px 10px 0px rgba(255, 0, 255, 0.3);
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 0px #000, 4px 4px 0px var(--accent);
+    color: #000;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #000;
+    font-style: italic;
+}
+
+/* NAVEGACIÓN */
+nav {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    background-color: var(--accent);
+    color: #000;
+    padding: 8px 15px;
+    text-decoration: none;
+    border: 2px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+nav a:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 2px 2px 0px #000;
+}
+
+nav a:active {
+    transform: translate(2px, 2px);
+}
+
+/* LAYOUT: DOS COLUMNAS */
+main {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#posts {
+    flex: 1;
+}
+
+#sidebar {
+    width: 250px;
+}
+
+/* WIDGETS RETRO */
+.widget {
+    background-color: var(--primary);
+    border: 3px dashed var(--secondary);
+    padding: 15px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.widget h3 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget ul li {
+    padding: 5px 0;
+    border-bottom: 1px dotted var(--secondary);
+}
+
+.widget ul li:last-child {
+    border-bottom: none;
+}
+
+.widget ul li a {
+    color: #000;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* POSTS */
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-card {
+    background-color: rgba(0, 204, 255, 0.1);
+    border: 3px solid var(--primary);
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.post-card:hover {
+    background-color: rgba(255, 0, 255, 0.2);
+    border-color: var(--secondary);
+    transform: skew(-2deg);
+}
+
+.post-card h3 {
+    color: var(--accent);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.post-card .meta {
+    font-size: 0.8em;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--bg);
+    border-top: 3px solid var(--primary);
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* RESPONSIVE PARA MÓVIL */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+    }
+}
